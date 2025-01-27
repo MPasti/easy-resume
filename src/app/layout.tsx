@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Ubuntu, Ubuntu_Sans } from "next/font/google";
-import "./globals.css";
+import "../styles/globals.css";
 import { cn } from "@/lib/utils";
+import { ThemeProvider } from "@/components/shared/theme-provider";
 
 const ubuntu = Ubuntu({
   variable: "--font-ubuntu",
@@ -26,8 +27,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={cn(ubuntu.variable, ubuntuSans.variable)}>
-        {children}
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          ubuntu.variable,
+          ubuntuSans.variable
+        )}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
