@@ -1,4 +1,4 @@
-import { LucideIcon } from "lucide-react";
+import { GripVertical, LucideIcon } from "lucide-react";
 import { SectionTitle } from "../sections/section-title";
 import { useFieldArray, useFormContext } from "react-hook-form";
 import {
@@ -55,7 +55,7 @@ export const MultipleDragList = ({
                 <div
                   {...provided.droppableProps}
                   ref={provided.innerRef}
-                  className="bg-red-500"
+                  className="rounded overflow-hidden border border-muted"
                 >
                   {fields.map((field, index) => {
                     return (
@@ -69,15 +69,16 @@ export const MultipleDragList = ({
                             key={field.id}
                             ref={provided.innerRef}
                             {...provided.draggableProps}
-                            className="h-16 bg-blue-400"
+                            className="h-16 w-full bg-muted/50 flex"
                           >
                             <div
                               {...provided.dragHandleProps}
-                              className="w-6 h-full bg-green-400"
+                              className="w-6 h-full bg-muted/50 flex items-center justify-center hover:brrightness-125 transition-all"
                             >
-                              <div className="flex-1">
-                                <p>content</p>
-                              </div>
+                              <GripVertical size={14} />
+                            </div>
+                            <div className="flex-1">
+                              <p>content</p>
                             </div>
                           </div>
                         )}

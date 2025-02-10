@@ -24,6 +24,27 @@ export const ResumePage = () => {
         phone: "",
         website: "",
       },
+      summary: "",
+      certifications: [],
+      educations: [],
+      experiences: [],
+      languages: [],
+      projects: [],
+      skills: [],
+      socialMedias: [
+        {
+          icon: "",
+          name: "teste 1",
+          url: "teste 1",
+          username: "test 1",
+        },
+        {
+          icon: "",
+          name: "teste 1",
+          url: "teste 1",
+          username: "test 1",
+        },
+      ],
     },
   };
 
